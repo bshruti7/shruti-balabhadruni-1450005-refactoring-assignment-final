@@ -5,22 +5,22 @@ public class DebitCard extends Card
 	private CheckingAccount fAccountConnectedTo;
 	private int fDebitCardNumber;
 	
+	CustomerDetails cust_obj = null;
 	
-	
-	public DebitCard(String name, String street, String town, String zipCode, String country)
-	{
-		super(name,street,town,zipCode,country);
-		fDebitCardNumber = fLastDebitCardNumber;
-		fLastDebitCardNumber++;
-	}
-	
-	public DebitCard(String name, String street, String town, String zipCode, String country, double limit, CheckingAccount account)
-	{
-		super(name,street,town,zipCode,country);
-		fDebitCardNumber = fLastDebitCardNumber;
-		fLastDebitCardNumber++;
-		fAccountConnectedTo = account;
-	}
+	public DebitCard(CustomerDetails cust_obj)
+    {
+            super(cust_obj);
+            fDebitCardNumber = fLastDebitCardNumber;
+            fLastDebitCardNumber++;
+    }
+    
+    public DebitCard(CustomerDetails cust_obj, double limit, CheckingAccount account)
+    {
+            super(cust_obj);
+            fDebitCardNumber = fLastDebitCardNumber;
+            fLastDebitCardNumber++;
+            fAccountConnectedTo = account;
+    }
 	
 	public boolean pay(double amount)
 	{

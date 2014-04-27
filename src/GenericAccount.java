@@ -7,19 +7,19 @@ public class GenericAccount {
 	protected String fCountry;
 	protected double fBalance;
 	
-	
+	 CustomerDetails cust_obj = null;
 
 	
 
-	public GenericAccount(String fName, String fStreet, String fZipcode,
-			String fTown, String fCountry) {
-		super();
-		this.fName = fName;
-		this.fStreet = fStreet;
-		this.fZipcode = fZipcode;
-		this.fTown = fTown;
-		this.fCountry = fCountry;
-	}
+	 public GenericAccount(CustomerDetails cust_obj){
+         this.fName = cust_obj.getfName();
+         this.fStreet = cust_obj.getfStreet();
+         this.fZipcode = cust_obj.getfZipCode();
+         this.fTown = cust_obj.getfTown();
+         this.fCountry = cust_obj.getfCountry();
+         
+         
+ }
 	public GenericAccount(double fBalance) {
 		super();
 		this.fBalance = fBalance;

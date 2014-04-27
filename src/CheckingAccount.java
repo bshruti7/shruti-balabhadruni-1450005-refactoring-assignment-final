@@ -12,25 +12,26 @@ public class CheckingAccount extends GenericAccount
 	private static SavingsAccount fSavingsAccount;
 	private static DebitCard fDebitCard;
 	private static int fNextAccountNumber = 0;
-	
-	public CheckingAccount(String name, String street, String zipcode, String town, String country)
-	{
-		super(name,street,zipcode,town,country);
-		fAccountNumber = fNextAccountNumber;
-		fNextAccountNumber++;
-		fDebitAllowed = false;
-		fDebitAmount = 0;
-		
-	}
-	
-	public CheckingAccount(String name, String street, String zipCode, String town, String country, float debit)
-	{
-		super(name,street,zipCode,town,country);
-		fAccountNumber = fNextAccountNumber;
-		fNextAccountNumber++;
-		fDebitAllowed = true;
-		fDebitAmount = debit;
-	}
+	CustomerDetails cust_obj = null;
+    
+    public CheckingAccount(CustomerDetails cust_obj)
+    {
+            super(cust_obj);
+            fAccountNumber = fNextAccountNumber;
+            fNextAccountNumber++;
+            fDebitAllowed = false;
+            fDebitAmount = 0;
+            
+    }
+    
+    public CheckingAccount(CustomerDetails cust_obj, float debit)
+    {
+            super(cust_obj);
+            fAccountNumber = fNextAccountNumber;
+            fNextAccountNumber++;
+            fDebitAllowed = true;
+            fDebitAmount = debit;
+    }
 	
 	public CheckingAccount(int accountnumber)
     {
@@ -63,22 +64,23 @@ public class CheckingAccount extends GenericAccount
 		}
 	}
 	
-	public boolean applyForCreditCard(String name, String street, String zipCode, String town, String country, int accountNumber)
-	{
-		if(fBalance < 0)
-		{
-			return false;
-		}
-		if(fBalance <= 2500)
-		{
-			fCreditCard = new CreditCard(name, street, town, zipCode, country);
-		}
-		else
-		{
-			fCreditCard = new CreditCard(name, street, town, zipCode, country, 5000);
-		}
-		return true;
-	}
+	public boolean applyForCreditCard(CustomerDetails cust_obj, int accountNumber)
+    {
+            if(fBalance < 0)
+            {
+                    return false;
+            }
+            if(fBalance <= 2500)
+            {
+                    fCreditCard = new CreditCard(cust_obj);
+            }
+            else
+            {
+                    fCreditCard = new CreditCard(cust_obj, 5000);
+            }
+            return true;
+    }
+    
 	
 	public double getBalance()
 	{

@@ -7,13 +7,14 @@ public class SavingsAccount extends GenericAccount {
 									// that equals 1 pound
 	private static double interestRate = 1.25;
 	private static int fNextAccountNumber = 0;
-	
-	public SavingsAccount(String name, String street, String zipCode, String town, String country)
-	{
-		super(name,street,zipCode,town,country);
-		fAccountNumber = fNextAccountNumber;
-		fNextAccountNumber++;
-	}
+	CustomerDetails cust_obj = null;
+    
+    public SavingsAccount(CustomerDetails cust_obj)
+    {
+            super(cust_obj);
+            fAccountNumber = fNextAccountNumber;
+            fNextAccountNumber++;
+    }
 	
 	public void calculateInterest()
 	{
