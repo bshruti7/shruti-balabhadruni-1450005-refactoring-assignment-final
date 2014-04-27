@@ -1,35 +1,22 @@
 
-public class CreditCard 
+public class CreditCard extends Card 
 {
 	private static int fLastCreditCardNumber;
 	private int fAccountConnectedTo;
 	private int fCreditCardNumber;
-	private String fName;
-	private String fStreet;
-	private String fTown;
-	private String fzipCode;
-	private String fCountry;
 	private double fLimit; // you cannot spend more than this limit
 	private double fBalance;
 	
 	public CreditCard(String name, String street, String town, String zipCode, String country)
 	{
-		fName = name;
-		fStreet = street;
-		fTown = town;
-		fzipCode = zipCode;
-		fCountry = country;
+		super(name,street,town,zipCode,country);
 		fLimit = 2500; // standard limit
 		fBalance = 0;
 	}
 	
 	public CreditCard(String name, String street, String town, String zipCode, String country, double limit)
 	{
-		fName = name;
-		fStreet = street;
-		fTown = town;
-		fzipCode = zipCode;
-		fCountry = country;
+		super(name,street,town,zipCode,country);
 		fLimit = limit;
 		fBalance = 0;
 	}
