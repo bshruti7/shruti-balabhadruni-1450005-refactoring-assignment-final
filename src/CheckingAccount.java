@@ -79,7 +79,7 @@ public class CheckingAccount
 		{
 			return false;
 		}
-		else if((fBalance - amount) < -fDebitAmount)
+		else if((amount - fBalance) < -fDebitAmount)
 		{
 			fBalance = fBalance - amount;
 			return true;
