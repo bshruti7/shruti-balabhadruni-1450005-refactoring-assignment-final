@@ -18,6 +18,7 @@ public class Bank
 	{
 		CheckingAccount newAccount = new CheckingAccount("Bob Smith", "1 Main St.", "12345", "Tacoma", "USA");
 		fCheckingAccounts.add(newAccount);
+		newAccount.setBalance(4000);
 		return newAccount.getAccountNumber();
 	}
 	
@@ -25,6 +26,7 @@ public class Bank
 	{
 		CheckingAccount newAccount = new CheckingAccount("Bob Smith", "1 Main St.", "12345", "Tacoma", "USA");
 		fCheckingAccounts.add(newAccount);
+		newAccount.setBalance(4000);
 		newAccount.applyForCreditCard("Bob Smith", "1 Main St.", "12345", "Tacoma", "USA", newAccount.getAccountNumber());
 		SavingsAccount newSavingsAccount = new SavingsAccount("Bob Smith", "1 Main St.", "12345", "Tacoma", "USA");
 		fSavingAccounts.add(newSavingsAccount);
