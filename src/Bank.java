@@ -24,14 +24,14 @@ public class Bank
 	
 	public int openFullPackage()
 	{
-		CheckingAccount newAccount = new CheckingAccount("Bob Smith", "1 Main St.", "12345", "Tacoma", "USA");
-		fCheckingAccounts.add(newAccount);
-		newAccount.setBalance(4000);
-		newAccount.applyForCreditCard("Bob Smith", "1 Main St.", "12345", "Tacoma", "USA", newAccount.getAccountNumber());
+		
+		int accountNumber = openSimpleCheckingAccount();
+        CheckingAccount newAccount1 = new CheckingAccount(accountNumber);
+		newAccount1.applyForCreditCard("Bob Smith", "1 Main St.", "12345", "Tacoma", "USA", newAccount1.getAccountNumber());
 		SavingsAccount newSavingsAccount = new SavingsAccount("Bob Smith", "1 Main St.", "12345", "Tacoma", "USA");
 		fSavingAccounts.add(newSavingsAccount);
-		DebitCard newDebetCard = new DebitCard("Bob Smith", "1 Main St.", "12345", "Tacoma", "USA", 0, newAccount);
-		return newAccount.getAccountNumber();
+		DebitCard newDebetCard = new DebitCard("Bob Smith", "1 Main St.", "12345", "Tacoma", "USA", 0, newAccount1);
+		return newAccount1.getAccountNumber();
 	}
 	
 	public boolean withdrawMoney(int accountNumber, double amount)
