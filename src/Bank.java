@@ -36,7 +36,7 @@ public class Bank
 	
 	public boolean withdrawMoney(int accountNumber, double amount)
 	{
-		CheckingAccount account = new CheckingAccount(accountNumber);
+		GenericAccount account = new CheckingAccount(accountNumber);
 		int index = fCheckingAccounts.indexOf(account);
 		return fCheckingAccounts.elementAt(index).withdrawal(amount);
 	}

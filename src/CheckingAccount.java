@@ -1,12 +1,7 @@
 
-public class CheckingAccount 
+public class CheckingAccount extends GenericAccount 
 {
 	private int fAccountNumber;
-	private String fName;
-	private String fStreet;
-	private String fZipcode;
-	private String fTown;
-	private String fCountry;
 	private boolean fDebitAllowed;
 	private double fDebitAmount;
 	private double fBalance;
@@ -20,11 +15,7 @@ public class CheckingAccount
 	
 	public CheckingAccount(String name, String street, String zipcode, String town, String country)
 	{
-		fName = name;
-		fStreet = street;
-		fZipcode = zipcode;
-		fTown = town;
-		fCountry = country;
+		super(name,street,zipcode,town,country);
 		fAccountNumber = fNextAccountNumber;
 		fNextAccountNumber++;
 		fDebitAllowed = false;
@@ -34,11 +25,7 @@ public class CheckingAccount
 	
 	public CheckingAccount(String name, String street, String zipCode, String town, String country, float debit)
 	{
-		fName = name;
-		fStreet = street;
-		fZipcode = zipCode;
-		fTown = town;
-		fCountry = country;
+		super(name,street,zipCode,town,country);
 		fAccountNumber = fNextAccountNumber;
 		fNextAccountNumber++;
 		fDebitAllowed = true;
@@ -46,9 +33,9 @@ public class CheckingAccount
 	}
 	
 	public CheckingAccount(int accountnumber)
-	{
-		fAccountNumber = accountnumber;
-	}
+    {
+            super(accountnumber);
+    }
 	
 	public void determineCosts()
 	{

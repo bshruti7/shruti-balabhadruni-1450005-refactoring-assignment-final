@@ -1,11 +1,7 @@
 
-public class SavingsAccount {
+public class SavingsAccount extends GenericAccount {
 	private int fAccountNumber;
-	private String fName;
-	private String fStreet;
-	private String fZipCode;
-	private String fTown;
-	private String fCountry;
+	
 	private double fBalance;
 	private static double costs = 1; // per period there is a cost associated with this account
 									// that equals 1 pound
@@ -14,11 +10,7 @@ public class SavingsAccount {
 	
 	public SavingsAccount(String name, String street, String zipCode, String town, String country)
 	{
-		fName = name;
-		fStreet = street;
-		fZipCode = zipCode;
-		fTown = town;
-		fCountry = country;
+		super(name,street,zipCode,town,country);
 		fAccountNumber = fNextAccountNumber;
 		fNextAccountNumber++;
 	}
@@ -52,7 +44,7 @@ public class SavingsAccount {
 		System.out.println("Savings account:     " + fAccountNumber);
 		System.out.println("Account holder name: " + fName);
 		System.out.println("Address:             " + fStreet);
-		System.out.print("                     " + fZipCode);
+		System.out.print("                     " + fZipcode);
 		System.out.println(" " + fTown);
 		System.out.println(fCountry.toUpperCase());
 		System.out.println("**************************************");
