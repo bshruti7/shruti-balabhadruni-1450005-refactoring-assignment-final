@@ -63,11 +63,6 @@ public class CheckingAccount extends GenericAccount
 		}
 	}
 	
-	public void verseMoney(double amount)
-	{
-		fBalance += amount;
-	}
-	
 	public boolean applyForCreditCard(String name, String street, String zipCode, String town, String country, int accountNumber)
 	{
 		if(fBalance < 0)
@@ -90,10 +85,7 @@ public class CheckingAccount extends GenericAccount
 		return fBalance;
 	}
 	
-	public void increaseBalance(double amount)
-	{
-		fBalance += amount;
-	}
+	
 	
 	public void decreaseBalance(double amount)
 	{

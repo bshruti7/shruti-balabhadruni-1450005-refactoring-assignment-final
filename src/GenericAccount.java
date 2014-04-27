@@ -5,7 +5,7 @@ public class GenericAccount {
 	protected String fZipcode;
 	protected String fTown;
 	protected String fCountry;
-	private double fBalance;
+	protected double fBalance;
 	
 	
 
@@ -49,6 +49,9 @@ public class GenericAccount {
 
 	public void setfBalance(double fBalance) {
 		this.fBalance = fBalance;
+	}
+	public void verseMoney(double amount) {
+		fBalance += amount;
 	}
 
 }

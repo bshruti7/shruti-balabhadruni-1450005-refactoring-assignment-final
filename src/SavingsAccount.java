@@ -33,10 +33,5 @@ public class SavingsAccount extends GenericAccount {
 		}
 	}
 	
-	public void verseMoney(double amount)
-	{
-		fBalance += amount;
-	}
-	
 	
 }
