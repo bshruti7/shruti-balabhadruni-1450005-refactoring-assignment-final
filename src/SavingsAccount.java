@@ -38,19 +38,5 @@ public class SavingsAccount extends GenericAccount {
 		fBalance += amount;
 	}
 	
-	public void print()
-	{
-		System.out.println("**************************************");
-		System.out.println("Savings account:     " + fAccountNumber);
-		System.out.println("Account holder name: " + fName);
-		System.out.println("Address:             " + fStreet);
-		System.out.print("                     " + fZipcode);
-		System.out.println(" " + fTown);
-		System.out.println(fCountry.toUpperCase());
-		System.out.println("**************************************");
-		System.out.println("Balance:  " + fBalance);
-		System.out.println("**************************************");
-	}
-	
 	
 }

@@ -1,10 +1,10 @@
 
 public class CheckingAccount extends GenericAccount 
 {
-	private int fAccountNumber;
+	int fAccountNumber;
 	private boolean fDebitAllowed;
 	private double fDebitAmount;
-	private double fBalance;
+	double fBalance;
 	private static double costs = 1; // per period there is a cost associated with this account
 									// that equals 1 pound
 	private static double debitRate = 4.7;
@@ -46,20 +46,6 @@ public class CheckingAccount extends GenericAccount
 		}
 	}
 	
-	public void print()
-	{
-		System.out.println("**************************************");
-		System.out.println("Savings account:     " + fAccountNumber);
-		System.out.println("Account holder name: " + fName);
-		System.out.println("Address:             " + fStreet);
-		System.out.print("                     " + fZipcode);
-		System.out.println(" " + fTown);
-		System.out.println(fCountry.toUpperCase());
-		System.out.println("**************************************");
-		System.out.println("Balance:  " + fBalance);
-		System.out.println("**************************************");
-	}
-	
 	public boolean withdrawal(double amount)
 	{
 		if(((fBalance - amount) < 0) && (!fDebitAllowed))
@@ -77,7 +63,11 @@ public class CheckingAccount extends GenericAccount
 		}
 	}
 	
-		
+	public void verseMoney(double amount)
+	{
+		fBalance += amount;
+	}
+	
 	public boolean applyForCreditCard(String name, String street, String zipCode, String town, String country, int accountNumber)
 	{
 		if(fBalance < 0)
